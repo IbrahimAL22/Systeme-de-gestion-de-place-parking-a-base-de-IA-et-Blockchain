@@ -1,0 +1,110 @@
+  import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Avatar } from "antd";
+import { Menu, Layout, Typography } from "antd";
+import {
+  UserOutlined,
+  DashboardOutlined,
+  OrderedListOutlined,
+} from "@ant-design/icons";
+import { NavLink, Outlet } from "react-router-dom";
+import LogoutButton from "../LogoutButton/LogoutButton";
+
+const { Sider, Header } = Layout;
+const { Title } = Typography;
+
+class LocataireComp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      result: "",
+    };
+  }
+  contract = this.props.contract;
+  accounts = this.props.accounts;
+
+  componentDidMount = async () => {
+    const result = await this.contract.methods
+      .LocataireName()
+      .call({ from: this.accounts[0] });
+    this.setState({ result });
+  };
+
+  render() {
+    return (
+      <>
+        <Header
+          style={{
+            zIndex: 1,
+            width: "100%",
+            backgroundColor: "#20232a",
+            position: "fixed",
+            backgroundColor: "#001220",
+          }}
+        >
+          <img
+            style={{ float: "left", width: "60px", height: "60px",borderRadius:50 }}
+            alt=""
+            src="/favicon.png"
+            width="35"
+            height="35"
+            className="d-inline-block align-top"
+          />
+          <Title
+            level={3}
+            style={{
+              position: "relative",
+              color: "white",
+              float: "left",
+              top: "15px",
+              marginLeft: "7px",
+            }}
+          >
+            Smart Parking
+          </Title>
+          <LogoutButton></LogoutButton>
+        </Header>
+        <Sider
+          style={{
+            overflow: "auto",
+            height: "100vh",
+            position: "fixed",
+            left: 0,
+            top: "64px",
+            bottom: 0,
+            backgroundColor:"#001220",
+            width:"300px"
+          }}
+          width={"255px"}
+        >
+          <br />
+          <Avatar size={90} src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Eo_circle_green_white_letter-l.svg/1024px-Eo_circle_green_white_letter-l.svg.png" />
+          <br />
+          <br />
+          <h4 style={{ color: "white" }}>{this.state.result}</h4>
+          <br />
+          <Menu style={{backgroundColor:"#001220"}} theme="dark" mode="inline">
+            <Menu.Divider></Menu.Divider>
+            <Menu.Item style={{backgroundColor:"#001220"}} key="1" >
+              <NavLink style={{backgroundColor:"#001220"}} to="dashboard" />
+              
+              <h4 style={{color:"#ffffff"} }>Home</h4>
+            </Menu.Item>
+            <br />
+            <Menu.Item style={{backgroundColor:"#001220"}} key="2" >
+              <NavLink style={{backgroundColor:"#001220"}} to="Ajouter-mat " />
+              <h4 style={{color:"#ffffff"} }>Ajouter la matricule</h4>
+            </Menu.Item>
+            <br />
+            <Menu.Item style={{backgroundColor:"#001220"}} key="2" >
+              <NavLink style={{backgroundColor:"#001220"}} to="liste_des_offres " />
+              <h4 style={{color:"#ffffff"} }>Liste des offres</h4>
+            </Menu.Item>
+          </Menu>
+        </Sider>
+        <Outlet />
+      </>
+    );
+  }
+}
+export default LocataireComp;
