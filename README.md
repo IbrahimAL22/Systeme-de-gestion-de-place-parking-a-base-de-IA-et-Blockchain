@@ -4,7 +4,7 @@ SmartParking is an innovative solution for managing parking spaces using blockch
 
 ## Demo Video 🎥
 
-[Download the SmartParking demo video](./video/Untitled1.mp4)
+[Download the SmartParking demo video](https://github.com/IbrahimAL22/Systeme-de-gestion-de-place-parking-a-base-de-IA-et-Blockchain/blob/main/video/Untitled1.mp4)
 
 
 ## Demo Slides 🖼️
