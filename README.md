@@ -6,4 +6,4 @@ SmartParking is an innovative solution for managing parking spaces using blockch
 
 Watch the SmartParking demo:
 
-![SmartParking Demo](./video/smartparking_demo.mp4)
+![SmartParking Demo](./video/Untitled1.mp4)
