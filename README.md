@@ -9,11 +9,35 @@ SmartParking is an innovative solution for managing parking spaces using blockch
 
 ## Demo Slides 🖼️
 
-### Slide 1
-![Slide 1](./images/1.png)
+<div style="position: relative; width: 100%; max-width: 600px; margin: auto;">
+  <div style="display: block; width: 100%; height: auto;">
+    <img src="./images/1.png" style="width: 100%; height: auto;">
+  </div>
+  <div style="display: block; width: 100%; height: auto;">
+    <img src="./images/2.png" style="width: 100%; height: auto;">
+  </div>
+  <div style="display: block; width: 100%; height: auto;">
+    <img src="./images/3.png" style="width: 100%; height: auto;">
+  </div>
 
-### Slide 2
-![Slide 2](./images/2.png)
-
-### Slide 3
-![Slide 3](./images/3.png)
+  <style>
+    @keyframes slide {
+      0% { opacity: 1; }
+      33% { opacity: 0; }
+      66% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    
+    div > div:nth-child(1) {
+      animation: slide 9s infinite;
+    }
+    
+    div > div:nth-child(2) {
+      animation: slide 9s 3s infinite;
+    }
+    
+    div > div:nth-child(3) {
+      animation: slide 9s 6s infinite;
+    }
+  </style>
+</div>
